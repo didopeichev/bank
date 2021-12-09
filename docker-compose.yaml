@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  api_service:
+    build: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - maria_db
+    command: sh -c './wait-for mysql_db:3306 -- npm start'
+  maria_db:
+    image: "mariadb:10.5.13"
+    expose:
+      - 3306
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: bank
+      MYSQL_USER: sample2
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root

@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    username: sample2
+    password: password
+    url: jdbc:mysql://maria_db:3306/bank?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+

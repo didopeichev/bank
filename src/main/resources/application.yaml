@@ -1,0 +1,14 @@
+app:
+  jwtSecret: secret
+  jwtExpirationInMs: 9000000
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  sql:
+    init:
+        mode: always
